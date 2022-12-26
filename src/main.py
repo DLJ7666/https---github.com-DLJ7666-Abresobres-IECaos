@@ -3,17 +3,16 @@ import discord
 from discord.ext import commands
 import random
 from discord.ext import tasks
-from src.keep_alive import live 
-from data.cartas import lista_completa_cartas
-from src.panini import *
-my_secret = os.environ['Tokensita AbreSobres']
+from keep_alive import live 
+from cartas import lista_completa_cartas
+from panini import *
+my_secret = 'MTA0Nzg3NDY1NjIwMTM0Mjk3Ng.GqMtdg.PZdvS-eTr6pIYjnRRUDiAHPjNVUcX0xR6wUruI'
 
 client = commands.Bot(command_prefix='=',intents=discord.Intents.all())
 
 @client.event
 async def on_ready():
     print('Bot encendido')
-
 
 @client.command()
 @commands.cooldown(1, 10, commands.BucketType.user)
